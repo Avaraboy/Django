@@ -14,11 +14,21 @@ def home(request):
         {'name' : 'Harsh Rajput', 'age' : 13}
     ]
 
+    text="""Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem natus dignissimos explicabo harum, a, alias omnis aut eius, accusantium recusandae eveniet sit nobis numquam cupiditate. Eos ipsum aliquid ut facere? Dolorem nostrum reprehenderit veniam suscipit obcaecati dignissimos deserunt modi? Nam quos in, soluta et qui accusantium facere omnis explicabo laborum provident, excepturi magnam saepe? Aspernatur quas soluta expedita quos, adipisci nesciunt velit ut veniam modi consectetur voluptatum enim iusto, maiores exercitationem molestias ipsum consequuntur. Dolorum mollitia maiores consequatur labore inventore numquam tenetur, tempore fugit facilis. Voluptatem aliquid recusandae necessitatibus hic ullam ex laboriosam, magni, quasi eos, et corrupti excepturi quibusdam."""
+
     # for people in peoples:
     #     print(peoples)
 
-    return render(request , "index.html",context={'peoples':peoples})
+    return render(request , "index.html",context={'peoples':peoples,'text':text})
+
+def other(request):
+
+    vegetables={'Pumpkin','Tomato','Potatao'}
+
+    return render(request , "other.html",context={'vegetables':vegetables})
 
 def about(request):
-    ab="<h1>This is about page</h1>"
-    return HttpResponse(ab)
+    return render(request , "about.html")
+
+def contact(request):
+    return render(request , "contact.html")
