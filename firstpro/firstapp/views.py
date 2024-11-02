@@ -25,10 +25,12 @@ def other(request):
 
     vegetables={'Pumpkin','Tomato','Potatao'}
 
-    return render(request , "other.html",context={'vegetables':vegetables})
+    return render(request , "other.html",context={'vegetables':vegetables,'page':'other'})
 
 def about(request):
-    return render(request , "about.html")
+    context = {'page':'about'}
+    return render(request , "about.html",context)
 
 def contact(request):
-    return render(request , "contact.html")
+    context = {'page':'contact'}
+    return render(request , "contact.html",context)
